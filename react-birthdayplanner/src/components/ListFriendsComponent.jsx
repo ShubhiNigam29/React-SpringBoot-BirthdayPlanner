@@ -8,6 +8,7 @@ class ListFriendsComponent extends Component {
         this.state = {
             friends: []
         }
+        this.addFriend = this.addFriend.bind(this);
     }
 
     componentDidMount() {
@@ -16,10 +17,17 @@ class ListFriendsComponent extends Component {
         });
     }
 
+    addFriend() {
+        this.props.history.push('/add-friend');
+    }
+
     render() {
         return (
             <div>
                 <h2 className="text-center">Friends List</h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addFriend}>Add Friend</button>
+                </div>
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>
