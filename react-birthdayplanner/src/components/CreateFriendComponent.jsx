@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FriendService from '../services/FriendService';
 
 class CreateFriendComponent extends Component {
     constructor(props) {
@@ -32,6 +33,9 @@ class CreateFriendComponent extends Component {
         e.preventDefault();
         let friend = {firstName: this.state.firstName, lastName: this.state.lastName, birthDate: this.state.birthDate};
         console.log('friend =>' + JSON.stringify(friend));
+        FriendService.createFriend(friend).then(res => {
+            this.props.history.push('/friends');
+        });
     }
 
     cancel() {
