@@ -19,11 +19,11 @@ class ListFriendsComponent extends Component {
     }
 
     addFriend() {
-        this.props.history.push('/add-friend');
+        this.props.history.push('/add-friend/-1');
     }
 
     editFriend(id) {
-        this.props.history.push(`/update-friend/${id}`);
+        this.props.history.push(`/add-friend/${id}`);
     }
 
     render() {
