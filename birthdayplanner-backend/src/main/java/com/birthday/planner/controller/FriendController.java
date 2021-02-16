@@ -1,9 +1,11 @@
 package com.birthday.planner.controller;
 
-import java.util.List;
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,5 +54,15 @@ public class FriendController {
 		friend.setBirthDate(friendDetails.getBirthDate());
 		Friends updatedFriend = friendRepository.save(friend);
 		return ResponseEntity.ok(updatedFriend);
+	}
+	
+	// Delete Friend REST API
+	@DeleteMapping("/friends/{id}")
+	public ResponseEntity<Map<String, Boolean>> deleteFriend(@PathVariable Long id) {
+		Friends friend = friendRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Friend doesn't exist with id: "+id));
+		friendRepository.delete(friend);
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return ResponseEntity.ok(response);
 	}
 }
