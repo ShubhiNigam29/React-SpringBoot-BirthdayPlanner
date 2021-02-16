@@ -29,4 +29,4 @@ In Birthday Planner, a full-stack web application is built with basic CRUD featu
 
 # Application UI
 
-![alt text](https://github.com/ShubhiNigam29/Music-Player/blob/main/music.jpg)
+![alt text](https://github.com/ShubhiNigam29/React-SpringBoot-BirthdayPlanner/blob/main/App.JPG)
