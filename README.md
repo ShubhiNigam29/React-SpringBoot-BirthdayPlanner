@@ -10,6 +10,7 @@ Birthday Planner is designed to keep track of birthdays of your loved ones, so t
 - MySQL Workbench 8.0.23 <br />
 - [React App](https://github.com/facebook/create-react-app) <br />
 - [Reactjs code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets) <br />
+- Nodejs 14.15.5 <br />
 - Bootstrap 4.6.0 <br />
 - Axios 0.21.1 <br />
 - Postman 8.0.5 <br />
