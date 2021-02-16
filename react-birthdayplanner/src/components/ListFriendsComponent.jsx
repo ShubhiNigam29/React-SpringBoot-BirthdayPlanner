@@ -11,6 +11,7 @@ class ListFriendsComponent extends Component {
         this.addFriend = this.addFriend.bind(this);
         this.editFriend = this.editFriend.bind(this);
         this.deleteFriend = this.deleteFriend.bind(this);
+        this.viewFriend = this.viewFriend.bind(this);
     }
 
     componentDidMount() {
@@ -31,6 +32,10 @@ class ListFriendsComponent extends Component {
         FriendService.deleteFriend(id).then((res) => {
             this.setState({friends: this.state.friends.filter(friend => friend.id !== id)});
         });
+    }
+
+    viewFriend(id) {
+        this.props.history.push(`/view-friend/${id}`);
     }
 
     render() {
@@ -61,6 +66,7 @@ class ListFriendsComponent extends Component {
                                         <td>
                                             <button onClick={() => this.editFriend(friend.id)} className="btn btn-info">Update</button>
                                             <button style={{marginLeft: "10px"}} onClick={() => this.deleteFriend(friend.id)} className="btn btn-danger">Delete</button>
+                                            <button style={{marginLeft: "10px"}} onClick={() => this.viewFriend(friend.id)} className="btn btn-info">View</button>
                                         </td>
                                     </tr>
                                 )
