@@ -40,7 +40,7 @@ class UpdateFriendComponent extends Component {
     updateFriend = (e) => {
         e.preventDefault();
         let friend = {firstName: this.state.firstName, lastName: this.state.lastName, birthDate: this.state.birthDate};
-        FriendService.createFriend(friend).then(res => {
+        FriendService.updateFriend(friend, this.state.id).then((res) => {
             this.props.history.push('/friends');
         });
     }

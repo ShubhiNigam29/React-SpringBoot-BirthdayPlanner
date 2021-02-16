@@ -14,6 +14,10 @@ class FriendService {
     getFriendById(friendID) {
         return axios.get(FRIEND_API_BASE_URL + '/' + friendID);
     }
+
+    updateFriend(friend, friendID) {
+        return axios.put(FRIEND_API_BASE_URL + '/' + friendID, friend);
+    }
 }
 
 export default new FriendService()
