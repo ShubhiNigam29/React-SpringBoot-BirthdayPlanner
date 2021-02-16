@@ -9,6 +9,7 @@ class ListFriendsComponent extends Component {
             friends: []
         }
         this.addFriend = this.addFriend.bind(this);
+        this.editFriend = this.editFriend.bind(this);
     }
 
     componentDidMount() {
@@ -19,6 +20,10 @@ class ListFriendsComponent extends Component {
 
     addFriend() {
         this.props.history.push('/add-friend');
+    }
+
+    editFriend(id) {
+        this.props.history.push(`/update-friend/${id}`);
     }
 
     render() {
@@ -46,7 +51,9 @@ class ListFriendsComponent extends Component {
                                         <td> {friend.firstName} </td>
                                         <td> {friend.lastName} </td>
                                         <td> {friend.birthDate} </td>
-                                        
+                                        <td>
+                                            <button onClick={() => this.editFriend(friend.id)} className="btn btn-info">Update</button>
+                                        </td>
                                     </tr>
                                 )
                             }

@@ -10,6 +10,10 @@ class FriendService {
     createFriend(friend) {
         return axios.post(FRIEND_API_BASE_URL, friend);
     }
+
+    getFriendById(friendID) {
+        return axios.get(FRIEND_API_BASE_URL + '/' + friendID);
+    }
 }
 
 export default new FriendService()
