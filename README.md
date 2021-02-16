@@ -2,10 +2,6 @@
 
 Birthday Planner is designed to keep track of birthdays of your loved ones, so that you can plan their special day in advance.
 
-# Live Demo
-
-[Birthday Alert!](https://shubhinigam29.github.io/React-SpringBoot-BirthdayPlanner/)
-
 # Tools/Technologies Used
 
 - Spring Boot 2.4.2 <br />
