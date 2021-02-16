@@ -18,6 +18,10 @@ class FriendService {
     updateFriend(friend, friendID) {
         return axios.put(FRIEND_API_BASE_URL + '/' + friendID, friend);
     }
+
+    deleteFriend(friendID) {
+        return axios.delete(FRIEND_API_BASE_URL + '/' + friendID);
+    }
 }
 
 export default new FriendService()

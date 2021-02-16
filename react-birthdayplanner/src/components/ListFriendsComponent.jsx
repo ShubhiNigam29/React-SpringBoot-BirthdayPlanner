@@ -10,6 +10,7 @@ class ListFriendsComponent extends Component {
         }
         this.addFriend = this.addFriend.bind(this);
         this.editFriend = this.editFriend.bind(this);
+        this.deleteFriend = this.deleteFriend.bind(this);
     }
 
     componentDidMount() {
@@ -24,6 +25,12 @@ class ListFriendsComponent extends Component {
 
     editFriend(id) {
         this.props.history.push(`/add-friend/${id}`);
+    }
+
+    deleteFriend(id) {
+        FriendService.deleteFriend(id).then((res) => {
+            this.setState({friends: this.state.friends.filter(friend => friend.id !== id)});
+        });
     }
 
     render() {
@@ -53,6 +60,7 @@ class ListFriendsComponent extends Component {
                                         <td> {friend.birthDate} </td>
                                         <td>
                                             <button onClick={() => this.editFriend(friend.id)} className="btn btn-info">Update</button>
+                                            <button style={{marginLeft: "10px"}} onClick={() => this.deleteFriend(friend.id)} className="btn btn-danger">Delete</button>
                                         </td>
                                     </tr>
                                 )
