@@ -32,7 +32,6 @@ class CreateFriendComponent extends Component {
     saveFriend = (e) => {
         e.preventDefault();
         let friend = {firstName: this.state.firstName, lastName: this.state.lastName, birthDate: this.state.birthDate};
-        console.log('friend =>' + JSON.stringify(friend));
         FriendService.createFriend(friend).then(res => {
             this.props.history.push('/friends');
         });
